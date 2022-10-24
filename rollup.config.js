@@ -14,7 +14,7 @@ const conf = {
     input: "src/index.ts",
     output: {
         sourcemap: !production,
-        file: "dist/index.cjs.js",
+        file: "dist/index.cjs.ts",
         format: "cjs",
         exports: "auto"
     },
