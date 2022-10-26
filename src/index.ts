@@ -1,8 +1,8 @@
-import { Header } from './stories/Header'
+import Header  from './stories/Header/Header'
 
 const returnLibrary = () => {
     return {
-        Header: Header
+        CCLHeader: Header
         // you can add here other components that you want to export
     }
 }
