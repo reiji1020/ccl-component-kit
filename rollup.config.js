@@ -1,55 +1,41 @@
-import styles from "rollup-plugin-styles";
-import babel from '@rollup/plugin-babel';
-import external from "rollup-plugin-peer-deps-external";
-import sourcemaps from 'rollup-plugin-sourcemaps';
-import del from 'rollup-plugin-delete';
+import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
-import nodeResolve from '@rollup/plugin-node-resolve';
 import typescript from '@rollup/plugin-typescript';
-import jsx from 'acorn-jsx';
+import { terser } from 'rollup-plugin-terser';
+import external from 'rollup-plugin-peer-deps-external';
+import css from 'rollup-plugin-css-only';
 
-const autoprefixer = require('autoprefixer');
-const production = !process.env.ROLLUP_WATCH;
+const dts = require("rollup-plugin-dts").default;
 
-const conf = {
-    input: "src/index.ts",
-    output: {
-        sourcemap: !production,
-        file: "dist/index.cjs.ts",
-        format: "cjs",
-        exports: "auto"
-    },
-    // this externelizes react to prevent rollup from compiling it
-    external: ["react", /@babel\/runtime/],
-    acornInjectPlugins: [jsx()],
-    plugins: [
-        // these are babel comfigurations
-        babel({
-            exclude: 'node_modules/**',
-            plugins: ['@babel/preset-react'],
-            babelHelpers: 'runtime'
-        }),
-        external(),
-        // this adds sourcemaps
-        sourcemaps(),
-        del({targets:'dist/*'}),
-        // this adds support for styles
-        styles({
-            postcss: {
-                plugins: [
-                    autoprefixer()
-                ]
+export default [
+    {
+        input: 'src/index.ts',
+        output: [
+            {
+                file: 'dist/cjs/index.js',
+                format: 'cjs',
+                sourcemap: true,
+                name: 'ccl-component-kit'
+            },
+            {
+                file: 'dist/esm/index.js',
+                format: 'esm',
+                sourcemap: true
             }
-        }),
-        nodeResolve({
-            preferBuiltins: false
-        }),
-        commonjs(),
-        typescript({
-            sourceMap: !production,
-            compilerOptions: { jsx: 'preserve' }
-        })
-    ]
-}
+        ],
+        plugins: [
+            external(),
+            resolve(),
+            commonjs(),
+            typescript({ tsconfig: './tsconfig.json', exclude: ["src/**/*.stories.tsx"] }),
+            terser(),
+            css()
+        ],
 
-export default conf;
+    },
+    {
+        input: 'dist/esm/types/index.d.ts',
+        output: [{ file: 'dist/index.d.ts', format: "esm" }],
+        plugins: [dts()],
+    }
+]
