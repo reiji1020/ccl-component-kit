@@ -1,23 +1,25 @@
-import {ComponentMeta, ComponentStoryObj } from '@storybook/react';
+import {Meta, StoryObj } from '@storybook/react';
 import Button from './Button';
 
-export default { component: Button } as ComponentMeta<typeof Button>;
+const button: Meta<typeof Button> = { component: Button };
 
-export const CCLButtonStrawberry: ComponentStoryObj<typeof Button> = {
+export default button;
+
+export const CCLButtonStrawberry: StoryObj<typeof Button> = {
   args: {
     label: 'Strawberry Pink',
     btnColor: 'strawberry'
   }
 };
 
-export const CCLButtonPineapple: ComponentStoryObj<typeof Button> = {
+export const CCLButtonPineapple: StoryObj<typeof Button> = {
   args: {
     label: 'Pineapple Yellow',
     btnColor: 'pineapple'
   }
 };
 
-export const CCLButtonSoda: ComponentStoryObj<typeof Button> = {
+export const CCLButtonSoda: StoryObj<typeof Button> = {
   args: {
     label: 'Soda Blue',
     btnColor: 'soda'

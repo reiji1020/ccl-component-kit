@@ -1,6 +1,7 @@
-import {ComponentMeta, ComponentStoryObj } from '@storybook/react';
+import {Meta, StoryObj } from '@storybook/react';
 import Header from './Header';
 
-export default { component: Header } as ComponentMeta<typeof Header>;
+const header: Meta<typeof Header> = { component: Header };
+export default header;
 
-export const CCLHeader: ComponentStoryObj<typeof Header> = {};
+export const CCLHeader: StoryObj<typeof Header> = {};
