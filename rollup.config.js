@@ -2,7 +2,6 @@ import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import typescript from '@rollup/plugin-typescript';
 import { terser } from 'rollup-plugin-terser';
-import external from 'rollup-plugin-peer-deps-external';
 import css from 'rollup-plugin-css-only';
 
 const dts = require("rollup-plugin-dts").default;
@@ -24,7 +23,6 @@ export default [
             }
         ],
         plugins: [
-            external(),
             resolve(),
             commonjs(),
             typescript({ tsconfig: './tsconfig.json', exclude: ["src/**/*.stories.tsx"] }),
