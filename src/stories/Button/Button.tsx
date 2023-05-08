@@ -1,13 +1,11 @@
 import React from 'react';
 import './button.css';
 
-type Props = {
+export type ButtonProps = {
     label: string,
     btnColor: string
 }
 
-const Button: React.FC<Props> = ({label, btnColor}) => (
+export const Button: React.FC<ButtonProps> = ({label, btnColor}) => (
     <button className={`btn btn-${btnColor}`}>{label}</button>
 );
-
-export default Button;
