@@ -1,15 +1,12 @@
 {
   "name": "ccl-component-kit",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "description": "CANDYCHUPSLabのサイトで使うコンポーネントのキット",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
   "type": "module",
   "files": [
-    "dist",
-    "LICENSE",
-    "package.json",
-    "README.md"
+    "dist"
   ],
   "repository": "https://github.com/reiji1020/ccl-component-kit.git",
   "author": "reiji1020 <sk@reiji1020.info>",
