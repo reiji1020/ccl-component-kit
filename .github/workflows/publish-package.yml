@@ -103,4 +103,4 @@ jobs:
         with:
           tag_name: ${{ needs.setup.outputs.tag-name }}
           release_name: Release ${{ needs.setup.outputs.tag-name }}
-          body: ${{ steps.change-log.outputs.changelog }}name: publish-package
+          body: ${{ steps.change-log.outputs.changelog }}
