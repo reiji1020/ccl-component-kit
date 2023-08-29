@@ -18,12 +18,13 @@ jobs:
       tag-exist: ${{ steps.tag-exist.outputs.exists }}
     steps:
       - name: checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: setup Node
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
           node-version: '18'
           registry-url: "https://registry.npmjs.org"
+          scope: '@reiji1020'
       - name: set package version
         id: package-version
         run: node -p -e '`::set-output name=version::${require("./package.json").version}`'
@@ -44,14 +45,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: setup Node
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
           node-version: 18.x
           registry-url: "https://registry.npmjs.org"
+          scope: '@reiji1020'
       - name: Cache node modules
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: ~/.npm
           key: ${{ runner.os }}-node-modules-${{ hashFiles('**/package-lock.json') }}
@@ -92,6 +94,7 @@ jobs:
         with:
           node-version: 18.x
           registry-url: "https://registry.npmjs.org"
+          scope: '@reiji1020'
       - name: set change log
         uses: scottbrenner/generate-changelog-action@master
         id: change-log
