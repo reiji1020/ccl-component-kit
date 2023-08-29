@@ -23,7 +23,7 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: '18'
-          registry-url: "https://github.com/reiji1020/ccl-component-kit"
+          registry-url: "https://registry.npmjs.org"
       - name: set package version
         id: package-version
         run: node -p -e '`::set-output name=version::${require("./package.json").version}`'
@@ -49,7 +49,7 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: 18.x
-          registry-url: "https://github.com/reiji1020/ccl-component-kit"
+          registry-url: "https://registry.npmjs.org"
       - name: Cache node modules
         uses: actions/cache@v2
         with:
@@ -91,7 +91,7 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 18.x
-          registry-url: "https://github.com/reiji1020/ccl-component-kit"
+          registry-url: "https://registry.npmjs.org"
       - name: set change log
         uses: scottbrenner/generate-changelog-action@master
         id: change-log
