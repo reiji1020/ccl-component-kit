@@ -1,10 +1,11 @@
-[![Publish Package](https://github.com/reiji1020/ccl-component-kit/actions/workflows/publish-packages.yml/badge.svg)](https://github.com/reiji1020/ccl-component-kit/actions/workflows/publish-packages.yml) [![pages-build-deployment](https://github.com/reiji1020/ccl-component-kit/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/reiji1020/ccl-component-kit/actions/workflows/pages/pages-build-deployment)
+[![Publish Package](https://github.com/reiji1020/ccl-component-kit/actions/workflows/publish-package.yml/badge.svg)](https://github.com/reiji1020/ccl-component-kit/actions/workflows/publish-package.yml) [![pages-build-deployment](https://github.com/reiji1020/ccl-component-kit/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/reiji1020/ccl-component-kit/actions/workflows/pages/pages-build-deployment)
 
 # ccl-component-kit
 
 CANDY CHUPS Labのサイトで使うコンポーネントのキットです。
 
 ## Figma
+
 <https://www.figma.com/files/project/71337935/CCL_Component?fuid=1036675751093311196>
 
 ## 利用用途
@@ -32,6 +33,7 @@ or
 This is a kit of components for use at the CANDY CHUPS Lab site.
 
 ## Figma
+
 <https://www.figma.com/files/project/71337935/CCL_Component?fuid=1036675751093311196>
 
 ## Usage
