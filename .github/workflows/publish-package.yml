@@ -70,7 +70,7 @@ jobs:
       # まだpublishされていないバージョンならpublishする
       - name: publish
         run: |
-          npx can-npm-publish --verbose && npm publish || echo "Does not publish"
+          npx can-npm-publish --verbose && npm publish --access public || echo "Does not publish"
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
       - name: package-version-to-git-tag
