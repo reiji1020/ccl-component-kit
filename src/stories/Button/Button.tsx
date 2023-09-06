@@ -1,11 +1,12 @@
 import React from 'react';
 import './button.css';
 
-export type ButtonProps = {
+type Props = {
     label: string,
-    btnColor: string
+    btnColor: string,
+    clickEvent: () => void
 }
 
-export const Button: React.FC<ButtonProps> = ({label, btnColor}) => (
-    <button className={`btn btn-${btnColor}`}>{label}</button>
+export const Button: React.FC<Props> = (props: Props) => (
+    <button className={`btn btn-${props.btnColor}`} onClick={props.clickEvent}>{props.label}</button>
 );
