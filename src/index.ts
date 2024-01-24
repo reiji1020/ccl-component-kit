@@ -1,4 +1,4 @@
 export {
     Header,
     Button
-} from './stories';
+} from './libs';
